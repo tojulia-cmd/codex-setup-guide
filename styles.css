@@ -1,0 +1,70 @@
+:root { --page:#f5f8fc; --paper:#fff; --ink:#172b45; --muted:#50637c; --blue:#254edb; --teal:#136c66; --line:#d8e2ed; --note:#fff0b3; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; scroll-padding-top:32px; }
+body { margin:0; background:var(--page); color:var(--ink); font:17px/1.7 'Segoe UI',Tahoma,sans-serif; }
+a { color:var(--blue); text-underline-offset:3px; }
+a:hover { text-decoration-thickness:2px; }
+button,input { font:inherit; }
+button { cursor:pointer; }
+:focus-visible { outline:3px solid var(--blue); outline-offset:4px; }
+.skip { position:absolute; left:18px; top:-80px; padding:10px; background:white; z-index:10; }
+.skip:focus { top:12px; }
+.layout { max-width:1440px; margin:auto; display:grid; grid-template-columns:270px minmax(0,1fr); }
+.rail { padding:40px 24px; position:sticky; top:0; height:100vh; overflow:auto; border-right:1px solid var(--line); }
+.brand { font:700 25px/1.2 Bahnschrift,'Trebuchet MS',sans-serif; color:var(--ink); text-decoration:none; display:block; margin-bottom:10px; }
+.rail p { font-size:14px; color:var(--muted); }
+.toc { border:0; padding:0; background:none; }
+.toc > summary { display:none; }
+.rail ol { padding:0; list-style:none; margin:24px 0; }
+.rail li { margin:7px 0; }
+.rail li a { display:block; padding:7px 9px; border-radius:6px; text-decoration:none; font-size:14px; color:var(--muted); }
+.rail li a:hover { color:var(--blue); background:#e5edff; }
+.rail li span { display:inline-block; width:26px; color:var(--blue); font-variant-numeric:tabular-nums; }
+.progress { background:var(--paper); border:1px solid var(--line); border-radius:10px; padding:15px; }
+.progress strong { display:block; margin-bottom:6px; }
+progress { width:100%; accent-color:var(--teal); height:9px; display:block; }
+.progress small { color:var(--muted); display:block; margin-top:8px; line-height:1.5; }
+.reset { margin-top:14px; color:var(--muted); border:0; border-bottom:1px dotted; background:none; padding:0; font-size:14px; }
+main { min-width:0; padding:58px clamp(24px,5vw,85px) 60px; }
+header { padding-bottom:36px; border-bottom:2px solid var(--ink); }
+.edition { font-size:15px; color:var(--teal); margin:0 0 16px; }
+h1,h2,h3 { font-family:Bahnschrift,'Trebuchet MS','Segoe UI',sans-serif; line-height:1.16; letter-spacing:-.025em; }
+h1 { font-size:clamp(38px,4.7vw,66px); max-width:800px; margin:0 0 24px; font-weight:650; }
+.intro { font-size:21px; max-width:720px; }
+.route { display:flex; flex-wrap:wrap; gap:8px; margin:24px 0; }
+.route span { padding:5px 12px; font-size:14px; border:1px solid var(--line); border-radius:20px; background:white; }
+.start { display:inline-block; padding:11px 20px; background:var(--blue); color:white; text-decoration:none; border-radius:7px; }
+.notice { padding:18px 22px; background:#e8f0ff; border-left:4px solid var(--blue); margin:24px 0; border-radius:0 8px 8px 0; }
+.warning { background:var(--note); border-left-color:#9b7300; }
+section { margin-top:55px; padding-top:12px; }
+.chapter { font-size:15px; font-weight:650; color:var(--teal); margin-bottom:12px; }
+h2 { font-size:clamp(29px,3vw,40px); margin:0 0 20px; }
+h3 { font-size:23px; margin:30px 0 12px; }
+p,li { max-width:78ch; }
+li { margin:7px 0; }
+ul,ol { padding-left:24px; }
+code { font: .9em/1.6 Consolas,'Cascadia Code',monospace; overflow-wrap:anywhere; }
+p code,li code,td code { padding:2px 5px; background:#e8edf5; border-radius:4px; }
+.snippet { margin:20px 0; background:#edf3fa; border:1px solid #cfdaea; border-radius:10px; overflow:hidden; }
+.snippet-head { display:flex; justify-content:space-between; align-items:center; padding:10px 16px; gap:12px; background:#e1eaf6; font-size:14px; }
+.copy { border:1px solid #b3c4e5; color:var(--blue); background:white; border-radius:5px; padding:4px 11px; min-height:34px; flex-shrink:0; }
+pre { white-space:pre-wrap; overflow-wrap:anywhere; margin:0; padding:20px; font:15px/1.65 Consolas,'Cascadia Code',monospace; }
+pre code { font:inherit; }
+.checks { padding:16px 20px; border:1px solid #b7d9cf; background:#edf8f3; border-radius:9px; margin:24px 0 0; }
+.checks label { display:flex; align-items:flex-start; gap:12px; cursor:pointer; margin:10px 0; }
+.checks input { margin-top:7px; width:19px; height:19px; flex-shrink:0; accent-color:var(--teal); }
+.table-wrap { overflow:auto; margin:18px 0; }
+table { width:100%; border-collapse:collapse; font-size:15px; background:white; }
+th,td { text-align:left; vertical-align:top; padding:12px; border:1px solid var(--line); min-width:140px; }
+th { background:#e8eef7; }
+details { background:white; border:1px solid var(--line); border-radius:9px; padding:15px 20px; margin:18px 0; }
+summary { cursor:pointer; font-weight:650; }
+.status { color:var(--teal); }
+.sources { font-size:15px; }
+footer { margin-top:50px; padding-top:24px; border-top:2px solid var(--ink); color:var(--muted); font-size:14px; }
+#message { position:fixed; bottom:20px; right:20px; max-width:calc(100% - 40px); background:var(--ink); color:white; padding:12px 20px; border-radius:8px; z-index:5; }
+#message:empty { display:none; }
+@media (max-width:900px) { .layout { grid-template-columns:220px minmax(0,1fr); } .rail { padding:28px 14px; } main { padding:40px 26px; } }
+@media (max-width:680px) { .layout { display:block; } .rail { position:static; height:auto; border-right:0; border-bottom:1px solid var(--line); padding:24px 20px; } .toc > summary { display:list-item; } .rail ol { display:grid; grid-template-columns:1fr 1fr; gap:2px 8px; margin:16px 0; } .rail li { margin:0; } main { padding:32px 20px; } h1 { font-size:42px; } .intro { font-size:19px; } section { margin-top:40px; } pre { padding:16px; font-size:14px; } .snippet-head { padding:9px 12px; } }
+@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+@media print { body { background:white; font-size:11pt; } .layout { display:block; } .rail,.copy,.start,#message { display:none; } main { padding:0; } h1 { font-size:30pt; } h2 { font-size:22pt; } section { margin-top:28px; } .snippet,.checks,table { break-inside:avoid; } a { color:inherit; } details { display:block; } }
